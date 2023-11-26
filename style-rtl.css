@@ -130,13 +130,14 @@
 }
 body {
   font-family: danaweb !important;
-  direction: rtl;
+  direction: rtl !important;
   margin: 0;
   overflow-x: hidden !important;
   width: 100% !important;
   font-size: 15px;
   padding: 0;
   color: #3f3f3f !important;
+  background-color: #f7f7f7;
 }
 
 * {
@@ -276,7 +277,7 @@ p {
 }
 
 .lowRadius {
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .highRadius {
@@ -658,4 +659,265 @@ select {
 }
 .darkBg p, .darkBg span, .darkBg h1, .darkBg h2, .darkBg h3, .darkBg h4, .darkBg h5, .darkBg h6 {
   color: #fff !important;
+}
+
+.mainHeaderBack {
+  padding: 15px 0;
+  background-color: #fff;
+}
+.mainHeaderBack .mainHeader .menuSectionUp {
+  display: flex;
+  align-items: center;
+}
+.mainHeaderBack .mainHeader .menuSectionUp .callNumberHeader {
+  background-color: #0055b6;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+.mainHeaderBack .mainHeader .menuSectionUp .callNumberHeader span {
+  margin: 5px 0px 0px 5px;
+}
+.mainHeaderBack .mainHeader .menuSectionDown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+.mainHeaderBack .mainHeader .menuSectionDown .mainMenu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.mainHeaderBack .mainHeader .menuSectionDown .mainMenu ul li {
+  margin: 0;
+  padding: 0;
+}
+.mainHeaderBack .mainHeader .menuSectionDown .mainMenu ul li::before {
+  content: none;
+}
+.mainHeaderBack .mainHeader .menuSectionDown .mainMenu ul li a {
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #3f3f3f !important;
+  font-weight: 500;
+}
+.mainHeaderBack .mainHeader .menuSectionDown .accountCartSection {
+  display: flex;
+}
+.mainHeaderBack .mainHeader .menuSectionDown .accountCartSection a {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.mainHeaderBack .mainHeader .menuSectionDown .accountCartSection a span {
+  margin-right: 5px;
+}
+
+.single-product .singleProductBack .singleProductSummary {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff !important;
+  padding: 45px 30px;
+  flex-flow: row-reverse;
+  margin-top: 10px;
+}
+.single-product .singleProductBack .singleProductSummary .woocommerce-product-gallery {
+  width: 65%;
+  display: flex;
+  margin: 0;
+}
+.single-product .singleProductBack .singleProductSummary .woocommerce-product-gallery .flex-viewport {
+  width: 75%;
+}
+.single-product .singleProductBack .singleProductSummary .woocommerce-product-gallery .flex-control-thumbs {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+.single-product .singleProductBack .singleProductSummary .woocommerce-product-gallery .flex-control-thumbs li {
+  width: 100%;
+  margin-bottom: 18px;
+}
+.single-product .singleProductBack .singleProductSummary .woocommerce-product-gallery .flex-control-thumbs li::before {
+  content: none;
+}
+.single-product .singleProductBack .singleProductSummary .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
+  display: none;
+}
+.single-product .singleProductBack .singleProductSummary .woocommerce-product-gallery img {
+  border: 1px solid #A1A1A1;
+  border-radius: 15px;
+}
+.single-product .singleProductBack .singleProductSummary .entry-summary {
+  width: 40%;
+}
+
+.singleProductSectionsBack .singleProductSections {
+  background-color: #fff;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-tabs .wc-tabs {
+  margin: 0 !important;
+  padding: 10px 15px !important;
+  position: unset !important;
+  background-color: #c3d5e9;
+  border-radius: 15px 15px 0px 0px;
+  display: flex;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-tabs .wc-tabs li {
+  border: none !important;
+  background-color: transparent !important;
+  margin-left: 40px !important;
+  position: relative;
+  padding: 0;
+}
+@media screen and (max-width: 768px) {
+  .singleProductSectionsBack .singleProductSections .woocommerce-tabs .wc-tabs li {
+    margin: 0 !important;
+  }
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-tabs .wc-tabs li::after {
+  position: absolute;
+  content: "";
+  width: 100% !important;
+  height: 2px !important;
+  background-color: #A1A1A1 !important;
+  bottom: -16px !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  border-bottom-right-radius: 0 !important;
+  border-width: 0 !important;
+  box-shadow: none !important;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-tabs .wc-tabs li::before {
+  display: none !important;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-tabs .wc-tabs li a {
+  color: #003470 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+@media screen and (max-width: 768px) {
+  .singleProductSectionsBack .singleProductSections .woocommerce-tabs .wc-tabs li a {
+    font-size: 12px !important;
+  }
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-tabs .wc-tabs li.active::after {
+  background-color: #003470 !important;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel {
+  padding: 15px;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel p {
+  text-align: justify;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews {
+  padding: 10px;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews #comments .woocommerce-Reviews-title {
+  display: none;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews #comments .commentlist {
+  background: #f7f7f7 !important;
+  margin: 15px 0 30px 0 !important;
+  padding: 20px;
+  border-radius: 15px;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews #comments .commentlist li::before {
+  content: none !important;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews #comments .commentlist li .comment_container img {
+  border-radius: 100%;
+  border: none !important;
+  background: none !important;
+  width: 40px !important;
+  top: 25px !important;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews #comments .commentlist li .comment_container .comment-text {
+  border: none !important;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: auto;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-notes {
+  width: 60%;
+}
+@media screen and (max-width: 768px) {
+  .singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-notes {
+    width: 100%;
+  }
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-form-rating {
+  width: 30%;
+}
+@media screen and (max-width: 768px) {
+  .singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-form-rating {
+    width: 100%;
+  }
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-form-author, .singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-form-email {
+  width: 48%;
+}
+@media screen and (max-width: 768px) {
+  .singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-form-author, .singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-form-email {
+    width: 100%;
+  }
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-form-comment {
+  width: 100%;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-form-comment textarea {
+  margin: 0 !important;
+  height: 200px !important;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .form-submit {
+  width: 100%;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .form-submit input {
+  background-color: #212120 !important;
+  border-radius: 30px !important;
+  padding: 20px 30px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s;
+  color: #fff !important;
+  width: 100% !important;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .form-submit input:hover {
+  background-color: #333332;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-form-cookies-consent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-form-cookies-consent label {
+  margin-bottom: 0;
+}
+.singleProductSectionsBack .singleProductSections .woocommerce-Tabs-panel .woocommerce-Reviews .comment-respond .comment-form .comment-form-cookies-consent #wp-comment-cookies-consent {
+  margin-left: 10px;
+}
+
+.woocommerce-breadcrumb {
+  max-width: 1280px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 30px !important;
+  color: #003470 !important;
+  font-weight: 500;
+}
+
+.star-rating span:before,
+.star-rating::before,
+p.stars a:hover:after,
+p.stars a:after {
+  color: #ffde6b !important;
 }/*# sourceMappingURL=style-rtl.css.map */

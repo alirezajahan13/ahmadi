@@ -3,13 +3,14 @@
 
 body{
     font-family: danaweb  !important;
-	direction: rtl;
+	direction: rtl !important;
 	margin: 0;
 	overflow-x: hidden !important;
 	width: 100% !important;
 	font-size: 15px;
     padding: 0;
     color: #3f3f3f !important;
+	background-color: $backColorLight;
 }
 *{
 	box-sizing: border-box;
@@ -130,7 +131,7 @@ p{
 	margin-bottom: 15px;
 }
 .lowRadius{
-	border-radius: 10px;
+	border-radius: 15px;
 }
 .highRadius{
 	border-radius: 25px;
