@@ -68,22 +68,44 @@
             padding: 45px 30px;
             flex-flow: row-reverse;
             margin-top: 10px;
+            @include xs{
+                flex-flow: row;
+                flex-wrap: wrap;
+            }
             .woocommerce-product-gallery{
                 width: 65%;
                 display: flex;
                 margin: 0;
+                @include xs{
+                    width: 100% !important;
+                    display: block;
+                    img{
+                        width: max-content;
+                        height: auto;
+                    }
+                }
                 .flex-viewport{
                     width: 75%;
+                    @include xs{
+                        width: 100%;
+                    }
                 }
                 .flex-control-thumbs{
                     display: flex;
                     flex-direction: column;
                     width: 25%;
+                    @include xs{
+                        flex-direction: inherit;
+                        width: 100%;
+                    }
                     li{
                         width: 100%;
                         margin-bottom: 18px;
                         &::before{
                             content: none;
+                        }
+                        @include xs{
+                            margin: 15px 0px;
                         }
                     }
                 }
@@ -97,6 +119,71 @@
             }
             .entry-summary{
                 width: 40%;
+                @include xs{
+                    width: 100% !important;
+                }
+                .woocommerce-product-rating{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 15px !important;
+                    .star-rating{
+                        margin: 0px 5px 5px 5px;
+                    }
+                }
+                .price{
+                    color: $mainColor !important;
+                    @include xs{
+                        font-size: 15px;
+                    }
+                }
+                .woocommerce-product-details__short-description{
+                    h4{
+                        margin: 10px 0;
+                        font-size: 16px;
+                        color: $textColor !important;
+                    }
+                    ul{
+                        margin: 0;
+                        padding: 0 10px;
+                    }
+                    @include xs{
+                        h4 , ul{
+                            font-size: 14px;
+                        }
+                    }
+                }
+                form{
+                    .variations{
+                        tbody{
+                            display: flex;
+                            @include xs{
+                                display: block;
+                            }
+                            tr{
+                                background: none;
+                                display: flex;
+                                // align-items: baseline;
+                            }
+                        }
+                    }
+                }
+                button{
+                    &[type=submit]{
+                        background-color: $mainColor2 !important;
+                        color: #fff;
+                        border: none;
+                        font-weight: 500;
+                        padding: 15px 25px;
+                        cursor: pointer;
+                        transition: all 0.4s;
+                        border-radius: 45px;
+                        font-size: 14px;
+                        opacity: 1;
+                        &:hover{
+                            background-color: lighten($mainColor2,10%);
+                        }
+                    }
+                }
             }
         }
     }
@@ -119,7 +206,7 @@
                     position: relative;
                     padding: 0;
                     @include sm{
-                        margin: 0 !important;
+                        // margin: 0 !important;
                     }
                     &::after{
                         position: absolute;
@@ -160,12 +247,22 @@
         }
         .woocommerce-Tabs-panel{
             padding: 15px;
+            @include xs{
+                padding: 0;
+            }
             p{
                 text-align: justify;
             }
             .woocommerce-Reviews{
                 padding: 10px;
+                .comment-reply-title{
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 15px;
+                }
                 #comments{
+                    display: flex;
+                    justify-content: center;
                     .woocommerce-Reviews-title{
                         display: none;
                     }
@@ -174,9 +271,17 @@
                         margin: 15px 0 30px 0 !important;
                         padding: 20px;
                         border-radius: 15px;
+                        @include xs{
+                            padding: 10px;
+                        }
                         li{
                             &::before{
                                 content: none !important;
+                            }
+                            .children{
+                                @include xs{
+                                    margin: 20px 0 0 0 !important;
+                                }
                             }
                             .comment_container{
                                 img{
@@ -188,8 +293,20 @@
                                 }
                                 .comment-text{
                                     border: none !important;
+                                    @include xs{
+                                        margin-right: 30px !important;
+                                    }
                                     .star-rating{
-
+                                        @include xs{
+                                            font-size: 11px;
+                                        }
+                                    }
+                                    .description{
+                                        p{
+                                            @include xs{
+                                                font-size: 13.5px;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -276,4 +393,9 @@ p.stars a:hover:after,
 p.stars a:after {
     color: #ffde6b !important;
     // letter-spacing: 1px; 
+}
+.woocommerce-cart{
+    .woocommerce {
+    display: flex;
+    }
 }
