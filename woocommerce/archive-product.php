@@ -56,7 +56,7 @@ do_action( 'woocommerce_before_main_content' );
                     $active_class = is_category_active($category->term_id) ? 'activeCat' : '';
 
                     echo '<div class="categoriesCardParent swiper-slide ' . $active_class . '" data-category-id="' . $category->term_id . '">';
-                    echo '<a class="categoriesCard" href="' . get_category_link($category->term_id) . '">';
+                    echo '<a class="categoriesCard whiteBg" href="' . get_category_link($category->term_id) . '">';
                     if ($category_image) {
                         echo '<img src="' . esc_url($category_image['url']) . '" alt="' . esc_attr($category->name) . '">';
                     }

@@ -20,31 +20,14 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
-
+<div id="comments" class="comments-area singleBox">
+	<div class="commentsOpenParent highRadius whiteBg">
+	<h3 class="commentsTitle">نظرات</h3>
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
-			<?php
-			$ahmadi_comment_count = get_comments_number();
-			if ( '1' === $ahmadi_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'ahmadi' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $ahmadi_comment_count, 'comments title', 'ahmadi' ) ),
-					number_format_i18n( $ahmadi_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
+		
 
 		<?php the_comments_navigation(); ?>
 
@@ -58,20 +41,27 @@ if ( post_password_required() ) {
 			);
 			?>
 		</ol><!-- .comment-list -->
+		</div>
+		<?php endif; // Check for have_comments(). ?>
+		<div class="commentBoxParent highRadius whiteBg">
+			<h3 class="commentsTitle">دیدگاهتان را بنویسید</h3>
+			<div class="commentSection">
+				<?php
+				the_comments_navigation();
+				// If comments are closed and there are comments, let's leave a little note, shall we?
+				if ( ! comments_open() ) :
+					?>
+					<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'ahmadi' ); ?></p>
+					<?php
+				endif;
 
-		<?php
-		the_comments_navigation();
-
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'ahmadi' ); ?></p>
-			<?php
-		endif;
-
-	endif; // Check for have_comments().
-
-	comment_form();
-	?>
+				comment_form();
+				?>
+				<div class="commentSectionImg">
+					<img src="<?php echo get_template_directory_uri() ?>/img/5985298.png" alt="تجهیزات-احمدی"> 
+				</div>
+			</div>
+		</div>
 
 </div><!-- #comments -->
+</div>

@@ -292,6 +292,10 @@ p {
   border: 1px solid #A1A1A1;
 }
 
+.whiteBg {
+  background-color: #fff;
+}
+
 button {
   font-family: danaweb !important;
   cursor: pointer;
@@ -408,7 +412,8 @@ li::before {
 label {
   display: block;
   margin-bottom: 15px;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 500;
   text-align: right;
   width: 100%;
 }
@@ -473,7 +478,7 @@ textarea {
   height: 150px;
   padding: 10px 20px;
   resize: none;
-  border-radius: 15px;
+  border-radius: 25px;
   background-color: #f7f7f7;
   border: none;
   color: #212120;
@@ -663,7 +668,6 @@ select {
 
 .mainHeaderBack {
   padding: 15px 0;
-  background-color: #fff;
 }
 @media screen and (max-width: 480px) {
   .mainHeaderBack {
@@ -738,6 +742,15 @@ select {
   cursor: pointer;
   color: #3f3f3f !important;
   font-weight: 500;
+  display: flex;
+  align-items: flex-start;
+}
+.mainHeaderBack .mainHeader .menuSectionDown .mainMenu ul li a .menu-icon svg {
+  display: block;
+  margin-left: 3px;
+}
+.mainHeaderBack .mainHeader .menuSectionDown .mainMenu ul .current-menu-item a {
+  font-weight: 800;
 }
 .mainHeaderBack .mainHeader .menuSectionDown .accountCartSection {
   display: flex;
@@ -760,7 +773,6 @@ select {
   transition: all 0.3s;
   z-index: 999;
   padding: 5px 0;
-  background-color: #fff;
   display: none;
 }
 @media screen and (max-width: 480px) {
@@ -805,6 +817,7 @@ select {
   .single-product .singleProductBack .singleProductSummary {
     flex-flow: row;
     flex-wrap: wrap;
+    padding: 20px 30px;
   }
 }
 .single-product .singleProductBack .singleProductSummary .woocommerce-product-gallery {
@@ -1110,9 +1123,6 @@ select {
   }
 }
 
-.singleProductSectionsBack .singleProductSections {
-  background-color: #fff;
-}
 .singleProductSectionsBack .singleProductSections .woocommerce-tabs .wc-tabs {
   margin: 0 !important;
   padding: 10px 15px !important;
@@ -1307,9 +1317,6 @@ p.stars a:after {
   color: #ffde6b !important;
 }
 
-.mainFooterBack {
-  background-color: #fff;
-}
 .mainFooterBack .mainFooter {
   display: flex;
   flex-wrap: wrap;
@@ -1363,9 +1370,6 @@ p.stars a:after {
   color: #727272 !important;
 }
 
-.copyRightSectionBack {
-  background-color: #fff;
-}
 .copyRightSectionBack .copyRightSection {
   display: flex;
   align-items: center;
@@ -1454,7 +1458,6 @@ p.stars a:after {
   align-items: center;
 }
 .generalCatParent .generalCat .swiper .swiper-wrapper .categoriesCardParent .categoriesCard {
-  background-color: #fff;
   border-radius: 100%;
   display: inline-block;
   padding: 35px;
@@ -1613,7 +1616,7 @@ p.stars a:after {
     padding: 5px;
   }
 }
-.archiveProducts ul.products li.product .add_to_cart_button {
+.archiveProducts ul.products li.product .add_to_cart_button, .archiveProducts ul.products li.product .product_type_simple {
   position: absolute;
   bottom: 15px;
   left: 15px;
@@ -1626,11 +1629,11 @@ p.stars a:after {
   background-color: #3f3f3f;
   transition: all 0.4s;
 }
-.archiveProducts ul.products li.product .add_to_cart_button:hover {
+.archiveProducts ul.products li.product .add_to_cart_button:hover, .archiveProducts ul.products li.product .product_type_simple:hover {
   background-color: #282828 !important;
 }
 @media screen and (max-width: 480px) {
-  .archiveProducts ul.products li.product .add_to_cart_button {
+  .archiveProducts ul.products li.product .add_to_cart_button, .archiveProducts ul.products li.product .product_type_simple {
     position: unset;
     margin-right: auto;
     margin-top: 0 !important;
@@ -1650,7 +1653,9 @@ p.stars a:after {
   width: 100% !important;
   border-collapse: collapse !important;
   margin: 20px 0 !important;
-  border: 1px solid #A1A1A1 !important;
+  border-style: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #dfdfdf;
 }
 .woocommerce-cart .woocommerce .woocommerce-cart-form .woocommerce-cart-form__contents thead tr th {
   font-size: 14px;
@@ -1739,6 +1744,9 @@ p.stars a:after {
 .woocommerce-cart .woocommerce .cart-collaterals .cart_totals table {
   width: 100% !important;
   border-collapse: collapse !important;
+  border-style: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #dfdfdf;
 }
 .woocommerce-cart .woocommerce .cart-collaterals .cart_totals table .woocommerce-shipping-totals td ul li::before {
   content: none;
@@ -1779,6 +1787,9 @@ p.stars a:after {
 }
 .woocommerce-checkout .woocommerce form.checkout .woocommerce-checkout-review-order table {
   border-collapse: collapse;
+  border-style: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #dfdfdf;
 }
 .woocommerce-checkout .woocommerce form.checkout .woocommerce-checkout-review-order .woocommerce-checkout-payment ul::before {
   content: none !important;
@@ -1800,6 +1811,36 @@ p.stars a:after {
 }
 .woocommerce-checkout .woocommerce form.checkout .woocommerce-checkout-review-order .woocommerce-checkout-payment .place-order .button:hover {
   background-color: #333332;
+}
+.woocommerce-checkout .woocommerce-order .woocommerce-order-overview {
+  margin: 0;
+  padding: 0;
+}
+.woocommerce-checkout .woocommerce-order .woocommerce-order-overview::before {
+  content: none;
+}
+.woocommerce-checkout .woocommerce-order .woocommerce-order-overview li::before {
+  content: none;
+}
+.woocommerce-checkout .woocommerce-order .woocommerce-order-details table {
+  border-collapse: collapse;
+  border-style: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #dfdfdf;
+}
+.woocommerce-checkout .woocommerce-order .woocommerce-customer-details .woocommerce-column .woocommerce-column__title {
+  background-color: #c3d5e9;
+  padding: 7px 12px;
+  border-radius: 15px 15px 0 0;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 480px) {
+  .woocommerce-checkout .woocommerce-order .woocommerce-customer-details .woocommerce-column .woocommerce-column__title {
+    font-size: 19px;
+  }
+}
+.woocommerce-checkout .woocommerce-order .woocommerce-customer-details .woocommerce-column address {
+  border-radius: 0px 0px 15px 15px !important;
 }
 
 .woocommerce-account article {
@@ -1877,10 +1918,69 @@ p.stars a:after {
     color: #3f3f3f !important;
   }
 }
-
-.aboutUsPageBack .aboutUsPage .aboutPageContent {
-  background-color: #fff;
+.woocommerce-account .woocommerce-MyAccount-content .woocommerce-order-details table {
+  border-collapse: collapse;
+  border-style: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #dfdfdf;
 }
+.woocommerce-account .woocommerce-MyAccount-content .woocommerce-customer-details .woocommerce-column .woocommerce-column__title {
+  background-color: #c3d5e9;
+  padding: 7px 12px;
+  border-radius: 15px 15px 0 0;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 480px) {
+  .woocommerce-account .woocommerce-MyAccount-content .woocommerce-customer-details .woocommerce-column .woocommerce-column__title {
+    font-size: 19px;
+  }
+}
+.woocommerce-account .woocommerce-MyAccount-content .woocommerce-customer-details .woocommerce-column address {
+  border-radius: 0px 0px 15px 15px !important;
+}
+.woocommerce-account .woocommerce-MyAccount-content .woocommerce-orders-table {
+  border-collapse: collapse;
+  border-style: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #dfdfdf;
+}
+.woocommerce-account .woocommerce-MyAccount-content .woocommerce-orders-table .woocommerce-orders-table__cell-order-actions a {
+  background-color: #212120;
+  color: #fff !important;
+  font-weight: 500 !important;
+  transition: all 0.4s;
+}
+.woocommerce-account .woocommerce-MyAccount-content .woocommerce-orders-table .woocommerce-orders-table__cell-order-actions a:hover {
+  background-color: #333332;
+}
+.woocommerce-account .woocommerce-MyAccount-content .woocommerce-info a {
+  background-color: #212120;
+  color: #fff !important;
+  font-weight: 500 !important;
+  transition: all 0.4s;
+}
+.woocommerce-account .woocommerce-MyAccount-content .woocommerce-info a:hover {
+  background-color: #333332;
+}
+.woocommerce-account .woocommerce-MyAccount-content .woocommerce-Addresses address {
+  font-style: normal;
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  text-align: right;
+  width: 100%;
+  border-radius: 0px 0px 15px 15px;
+  padding: 6px 15px;
+}
+
+.woocommerce-info {
+  border-top-color: #d5d5d5 !important;
+}
+.woocommerce-info::before {
+  color: #999999 !important;
+}
+
 @media screen and (max-width: 480px) {
   .aboutUsPageBack .aboutUsPage .aboutPageContent {
     padding: 15px;
@@ -1931,4 +2031,473 @@ p.stars a:after {
   .aboutUsPageBack .aboutUsPage .aboutPageContent .differentOrderAbout {
     flex-flow: column-reverse;
   }
+}
+
+.contactPageBack .contactPage .contactPageContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 480px) {
+  .contactPageBack .contactPage .contactPageContent {
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contactPageBack .contactPage .contactPageContent .sectionOne {
+    order: 2;
+  }
+}
+.contactPageBack .contactPage .contactPageContent .sectionOne h3 {
+  margin-bottom: 10px;
+}
+.contactPageBack .contactPage .contactPageContent .sectionOne h3:nth-child(1) {
+  margin: 0px 0px 10px 0px;
+}
+.contactPageBack .contactPage .contactPageContent .sectionOne a {
+  display: flex;
+  font-size: 16px;
+}
+.contactPageBack .contactPage .contactPageContent .sectionOne a svg {
+  margin-left: 4px;
+}
+.contactPageBack .contactPage .contactPageContent .sectionOne .locationPart {
+  margin-top: 15px;
+}
+.contactPageBack .contactPage .contactPageContent .sectionOne .locationPart iframe {
+  height: 200px;
+  width: 90%;
+  border-radius: 15px;
+}
+@media screen and (max-width: 480px) {
+  .contactPageBack .contactPage .contactPageContent .sectionOne .locationPart iframe {
+    height: 170px;
+    width: 100%;
+  }
+}
+.contactPageBack .contactPage .contactPageContent .sectionTwo {
+  width: 40%;
+}
+@media screen and (max-width: 480px) {
+  .contactPageBack .contactPage .contactPageContent .sectionTwo {
+    order: 1;
+    width: 100%;
+  }
+}
+.contactPageBack .contactPage .contactPageContent .sectionTwo textarea {
+  height: 200px;
+}
+@media screen and (max-width: 480px) {
+  .contactPageBack .contactPage .contactPageContent .sectionTwo textarea {
+    height: 140px;
+  }
+}
+.contactPageBack .contactPage .contactPageContent .sectionTwo .formSectionUp p {
+  margin-bottom: 0;
+}
+
+.archiveParent {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 30px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 480px) {
+  .archiveParent {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-gap: 10px;
+  }
+}
+.archiveParent a {
+  transition: all 0.4s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #fff;
+}
+.archiveParent a:hover {
+  background-color: #fafafa;
+  border: 1px solid #efefef;
+}
+.archiveParent a:hover img {
+  transform: scale(1.1);
+}
+@media screen and (max-width: 480px) {
+  .archiveParent a {
+    margin: 7px 0;
+  }
+}
+.archiveParent a p {
+  font-size: 15px;
+  line-height: 23px;
+  min-height: 60px;
+  overflow: hidden;
+  margin: 0px 0 10px 0;
+  padding: 0px 15px;
+  text-align: center;
+}
+@media screen and (max-width: 480px) {
+  .archiveParent a p {
+    font-size: 13.5px;
+    line-height: 20px;
+    min-height: 40px;
+  }
+}
+.archiveParent a .archiveCardImg {
+  overflow: hidden;
+  min-height: 220px;
+  max-height: 220px;
+}
+@media screen and (max-width: 480px) {
+  .archiveParent a .archiveCardImg {
+    min-height: 170px;
+    max-height: 170px;
+  }
+}
+.archiveParent a .archiveCardImg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.archiveParent a img {
+  transition: all 0.4s;
+}
+.archiveParent a .entry-title {
+  font-size: 18px;
+  overflow: hidden;
+  padding: 0px 15px;
+  font-weight: 700;
+  margin: 20px 0;
+  text-align: center;
+}
+@media screen and (max-width: 480px) {
+  .archiveParent a .entry-title {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+}
+.archiveParent a .archivePostFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+@media screen and (max-width: 480px) {
+  .archiveParent a .archivePostFooter {
+    padding-top: 0;
+  }
+}
+.archiveParent a .archivePostFooter span {
+  display: flex;
+  height: 20px;
+  font-size: 13px;
+  color: #ef9038;
+  font-weight: 500;
+}
+@media screen and (max-width: 480px) {
+  .archiveParent a .archivePostFooter span {
+    align-items: end;
+    font-size: 12px;
+  }
+}
+.archiveParent a .archivePostFooter span svg {
+  margin-left: 5px;
+}
+
+.blogCatsParent {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.blogCatsParent .blogCatItem {
+  background-color: #c3d5e9;
+  border: 1px solid #003470;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 7px 20px;
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.4s;
+}
+.blogCatsParent .blogCatItem:hover, .blogCatsParent .blogCatItem:focus {
+  background-color: #d2dfee;
+  transform: translateY(-0.25em);
+}
+@media screen and (max-width: 480px) {
+  .blogCatsParent .blogCatItem {
+    padding: 5px 10px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+}
+
+.blog .generalHeading {
+  margin-bottom: 15px;
+}
+
+.archivePagination {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 25px auto;
+}
+.archivePagination .current {
+  background-color: #f8f8f8 !important;
+  border: 1px solid #b7b7b7 !important;
+  cursor: context-menu;
+}
+.archivePagination .page-numbers {
+  border: 1px solid #d5d5d5;
+  color: #3f3f3f !important;
+  transition: all 0.4s;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  margin: 0 3px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.archivePagination .page-numbers:hover {
+  background-color: whitesmoke;
+}
+.archivePagination .dots {
+  background-color: #f8f8f8;
+}
+.archivePagination .next .leftArrow {
+  height: 15px;
+}
+.archivePagination .prev .rightArrow {
+  height: 15px;
+}
+
+.singleBox {
+  margin: 50px auto;
+  max-width: 1000px;
+}
+
+.generalSinglePostStyle .entry-header {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 480px) {
+  .generalSinglePostStyle .entry-header .entry-title {
+    line-height: 32px;
+    font-size: 22px;
+  }
+}
+.generalSinglePostStyle .archivePostFooter {
+  display: flex;
+  justify-content: center;
+}
+.generalSinglePostStyle .archivePostFooter .postDate, .generalSinglePostStyle .archivePostFooter .postAuthor {
+  margin-left: 15px;
+}
+.generalSinglePostStyle .archivePostFooter span {
+  font-size: 14px;
+  color: #A1A1A1;
+}
+@media screen and (max-width: 480px) {
+  .generalSinglePostStyle .archivePostFooter span {
+    font-size: 10px;
+  }
+}
+.generalSinglePostStyle .singlePostCard .post-thumbnail img, .generalSinglePostStyle .singlePostCard .entry-content img {
+  display: block;
+  border-radius: 25px;
+}
+.generalSinglePostStyle .singlePostCard .entry-content p {
+  text-align: justify;
+}
+
+.commentsTitle {
+  background-color: #c3d5e9;
+  padding: 15px 20px;
+  border-radius: 25px 25px 0 0;
+  font-weight: 600;
+  margin: 0;
+}
+
+.single-post .comments-area .commentBoxParent .commentSection {
+  display: flex;
+  align-items: center;
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-respond {
+  width: 55%;
+}
+@media screen and (max-width: 480px) {
+  .single-post .comments-area .commentBoxParent .commentSection .comment-respond {
+    width: 100%;
+  }
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-respond form {
+  padding: 25px;
+}
+@media screen and (max-width: 480px) {
+  .single-post .comments-area .commentBoxParent .commentSection .comment-respond form {
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .single-post .comments-area .commentBoxParent .commentSection .comment-respond form .comment-form-comment {
+    margin-bottom: 10px;
+  }
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-respond form .comment-form-comment label {
+  margin-bottom: 0;
+  padding-right: 10px;
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-respond form .comment-form-comment textarea {
+  height: 120px;
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-respond form .comment-form-author {
+  display: inline-block;
+  width: 48%;
+  margin-left: 10px;
+}
+@media screen and (max-width: 480px) {
+  .single-post .comments-area .commentBoxParent .commentSection .comment-respond form .comment-form-author {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-respond form .comment-form-author label {
+  margin-bottom: 0;
+  padding-right: 10px;
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-respond form .comment-form-email {
+  display: inline-block;
+  width: 48%;
+}
+@media screen and (max-width: 480px) {
+  .single-post .comments-area .commentBoxParent .commentSection .comment-respond form .comment-form-email {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-respond form .comment-form-email label {
+  margin-bottom: 0;
+  padding-right: 10px;
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-respond form .comment-form-url {
+  display: none;
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-respond form .comment-form-cookies-consent {
+  display: flex;
+  align-items: center;
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-respond form .comment-form-cookies-consent label {
+  padding-right: 5px !important;
+  margin-bottom: 0 !important;
+  font-size: 12.5px;
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-respond input[type=submit] {
+  padding: 10px 25px;
+}
+.single-post .comments-area .commentBoxParent .commentSection .commentSectionImg {
+  width: 46%;
+}
+@media screen and (max-width: 480px) {
+  .single-post .comments-area .commentBoxParent .commentSection .commentSectionImg {
+    display: none;
+  }
+}
+.single-post .comments-area .commentBoxParent .commentSection .comment-reply-title {
+  display: none;
+}
+.single-post .comments-area .commentsOpenParent {
+  margin-bottom: 30px;
+}
+.single-post .comments-area .commentsOpenParent .comment-list {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.single-post .comments-area .commentsOpenParent .comment-list li {
+  padding: 20px;
+  margin: 0;
+}
+.single-post .comments-area .commentsOpenParent .comment-list li::before {
+  content: none;
+}
+.single-post .comments-area .commentsOpenParent .comment-list li .comment-body {
+  background-color: #f7f7f7;
+  padding: 25px;
+  border-radius: 15px;
+}
+@media screen and (max-width: 480px) {
+  .single-post .comments-area .commentsOpenParent .comment-list li .comment-body {
+    padding: 15px;
+  }
+}
+.single-post .comments-area .commentsOpenParent .comment-list li .comment-body .comment-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 480px) {
+  .single-post .comments-area .commentsOpenParent .comment-list li .comment-body .comment-meta {
+    align-items: normal;
+    flex-direction: column;
+    font-size: 12px;
+  }
+}
+.single-post .comments-area .commentsOpenParent .comment-list li .comment-body .comment-meta .comment-author {
+  display: flex;
+  align-items: center;
+}
+.single-post .comments-area .commentsOpenParent .comment-list li .comment-body .comment-meta .comment-author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin: 0px 0px 5px 20px;
+}
+@media screen and (max-width: 480px) {
+  .single-post .comments-area .commentsOpenParent .comment-list li .comment-body .comment-meta .comment-author img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
+}
+.single-post .comments-area .commentsOpenParent .comment-list li .comment-body .comment-meta .comment-author b {
+  margin-left: 4px;
+}
+.single-post .comments-area .commentsOpenParent .comment-list li .comment-body .comment-meta .comment-metadata a time {
+  font-size: 14px;
+  color: #A1A1A1;
+}
+@media screen and (max-width: 480px) {
+  .single-post .comments-area .commentsOpenParent .comment-list li .comment-body .comment-content p {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .single-post .comments-area .commentsOpenParent .comment-list li .children {
+    padding-right: 7px;
+  }
+}
+.single-post .comments-area .commentsOpenParent .comment-list li .children li {
+  padding-left: 0;
+  border-radius: 15px;
+}
+.single-post .comments-area .comment-reply-link {
+  color: #0055b6 !important;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13.5px;
+  margin-right: auto;
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  border-bottom: 1px solid #d5d5d5;
 }/*# sourceMappingURL=style-rtl.css.map */

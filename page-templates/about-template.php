@@ -10,7 +10,7 @@ get_header();
         <div class="generalHeading">
             <h1>درباره ما</h1>
         </div>
-        <div class="aboutPageContent highPadding lowRadius mediumMargined">
+        <div class="aboutPageContent highPadding lowRadius mediumMargined whiteBg">
             <div class="sectionOne">
                 <div class="textBox">
                     <h3>لورم ایپسوم متن ساختگی</h3>

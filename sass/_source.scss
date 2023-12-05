@@ -142,6 +142,9 @@ p{
 .lightBorder{
 	border: 1px solid $backColorLight3;
 }
+.whiteBg{
+	background-color: #fff;
+}
 button{
     font-family: danaweb !important;
 	cursor: pointer;
@@ -250,7 +253,8 @@ li{
 label{
 	display: block;
 	margin-bottom: 15px;
-	font-size: 13px;
+	font-size: 14px;
+    font-weight: 500;
 	text-align: right;
 	width: 100%;
 }
@@ -300,7 +304,7 @@ textarea{
 	height: 150px;
 	padding: 10px 20px;
 	resize: none;
-	border-radius: 15px;
+	border-radius: 25px;
 	background-color: $backColorLight;
 	border: none;
 	color: $textColorDark;

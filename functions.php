@@ -255,3 +255,77 @@ function bbloomer_add_cart_quantity_plus_minus() {
         
    " );
 }
+
+function bbloomer_shop_product_short_description() {
+	the_excerpt();
+}
+function my_excerpt_length($length){
+	return 20;
+}
+add_filter('excerpt_length', 'my_excerpt_length');
+
+function new_excerpt_more( $more ) {
+	return ' ... ';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+function pagination_bar() {
+	global $wp_query;
+
+	$total_pages = $wp_query->max_num_pages;
+
+	if ($total_pages > 1){
+		// $current_page = max(1, get_query_var('paged'));
+		global $wp_query;
+		$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+		echo paginate_links(array(
+			'base' =>@add_query_arg('paged','%#%'),
+			'format' => '/page/%#%',
+			'current' => $current,
+			'total' => $total_pages,
+			'next_text' => '<span class="leftArrow"><svg width="12px" height="12px" xmlns="http://www.w3.org/2000/svg" fill="#3f3f3f" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path fill="none" stroke="#505050" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="m20.5 26.5-12-12 12-12"></path></svg></span>',
+			'prev_text' => '<span class="rightArrow"><svg width="12px" height="12px" xmlns="http://www.w3.org/2000/svg" fill="#3f3f3f" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path fill="none" stroke="#505050" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="m8.5 2.5 12 12-12 12"></path></svg></span>'
+		));
+	}
+}
+
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+
+function my_wp_nav_menu_objects($items, $args) {
+    foreach ($items as &$item) {
+        $icon = get_field('svg_menu_item_icon', $item);
+        if ($icon) {
+            $icon_markup = '<div class="menu-icon">' . $icon . '</div>';
+            $item->title = $icon_markup . $item->title;
+        }
+    }
+    return $items;
+}
+
+add_filter( 'wp_kses_allowed_html', 'acf_add_allowed_svg_tag', 10, 2 );
+
+function acf_add_allowed_svg_tag( $tags, $context ) {
+    if ( $context === 'acf' ) {
+        $tags['svg']  = array(
+            'xmlns'        => true,
+      'width'      => true,
+      'height'    => true,
+      'stroke'    => true,
+      'stroke-width'    => true,
+      'preserveAspectRatio'  => true,
+            'fill'        => true,
+            'viewbox'        => true,
+            'role'        => true,
+            'aria-hidden'      => true,
+            'focusable'        => true,
+        );
+        $tags['path'] = array(
+            'd'    => true,
+            'fill' => true,
+			'stroke'    => true,
+			'stroke-width'    => true,
+        );
+    }
+
+    return $tags;
+}

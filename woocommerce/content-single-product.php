@@ -66,7 +66,7 @@ if ( post_password_required() ) {
 			</div>
 		</div>
 		<div class="singleProductSectionsBack">
-			<div class="singleProductSections highMargined lowRadius">
+			<div class="singleProductSections highMargined lowRadius whiteBg">
 				<?php
 				/**
 				 * Hook: woocommerce_after_single_product_summary.
