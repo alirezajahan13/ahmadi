@@ -24,3 +24,30 @@ var swiper = new Swiper(".mySwiper", {
     }
 
 });
+var swiper = new Swiper(".productSwiper", {
+    slidesPerView: 2,
+    spaceBetween: 20,
+    grabCursor: true,
+    freeMode: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+    },
+    // autoplay: {
+    //   delay: 5000,
+    // }
+});

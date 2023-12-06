@@ -52,7 +52,6 @@ do_action( 'woocommerce_before_main_content' );
                 foreach ($categories as $category) {
                     $category_image = get_field('category_mb_icon_img', 'product_cat_' . $category->term_id);
 
-                    // چک کردن اگر دسته‌بندی فعال است تا کلاس 'active' به آن اضافه شود
                     $active_class = is_category_active($category->term_id) ? 'activeCat' : '';
 
                     echo '<div class="categoriesCardParent swiper-slide ' . $active_class . '" data-category-id="' . $category->term_id . '">';
@@ -66,12 +65,10 @@ do_action( 'woocommerce_before_main_content' );
                     echo '</span>';
                     echo '</div>';
                 }
-
                 function is_category_active($category_id) {
-                    // گرفتن دسته‌بندی فعلی صفحه
+
                     $current_category = get_queried_object();
 
-                    // چک کردن اگر صفحه حاوی دسته‌بندی باشد و ID آن با ID دسته‌بندی فعلی یکسان باشد
                     return ($current_category instanceof WP_Term && $current_category->term_id == $category_id);
                 }
                 ?>

@@ -18,6 +18,24 @@
                     width: 60px;
                 }
             }
+            .dgwt-wcas-search-wrapp{
+                width: 30% !important;
+                margin: 0 !important;
+                @include xs{
+                    display: none;
+                }
+                form{
+                    .dgwt-wcas-search-input{
+                        padding: 5px 10px !important;
+                        border: 1px solid $textColorLight !important;
+                        background-color: #fff;
+                    }
+                    .dgwt-wcas-search-submit{
+                        left: 16px !important;
+                        top: 12px !important;
+                    }
+                }
+            }
             .callNumberHeader{
                 background-color: $mainColor;
                 display: flex;
@@ -139,6 +157,11 @@
 }
 .showStickyHeader{
     top: 0;
+}
+.introSectionBack{
+    .introSection{
+        
+    }
 }
 .single-product{
     .singleProductBack{
@@ -678,6 +701,9 @@ p.stars a:after {
                     svg{
                         margin-left: 5px;
                     }
+                    .locationSvgFooter{
+                        width: 10%;
+                    }
                 }
             }
         }
@@ -764,6 +790,9 @@ p.stars a:after {
         .swiper{
             .swiper-wrapper{
                 padding: 35px 0;
+                @include xs{
+                    padding: 10px 0;
+                }
                 .categoriesCardParent{
                     display: flex;
                     flex-direction: column;
@@ -776,6 +805,10 @@ p.stars a:after {
                         width: 150px;
                         height: 150px;
                         margin-bottom: 10px;
+                        transition: all 0.4s;
+                        &:hover{
+                            background-color: $mainColorLight;
+                        }
                         @include xs{
                             padding: 20px;
                             width: 100px;
@@ -1836,6 +1869,235 @@ p.stars a:after {
             display: flex;
             width: max-content;
             border-bottom: 1px solid #d5d5d5;
+        }
+    }
+}
+li.product{
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 25px;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    transition: all 0.4s;
+    border: 1px solid #fff;
+    &::before{
+        content: none;
+    }
+    &:hover{
+        background-color: lighten($backColorLight,1.3%);
+        border: 1px solid darken($backColorLight,3%);
+    }
+    @include xs{
+        width: 100% !important;
+        margin-bottom: 0 !important;
+        position: unset;
+        padding: 8px;
+    }
+    a{
+        @include xs{
+            display: flex;
+            flex-direction: column;
+        }
+        img{
+            border: 1px solid #A1A1A1;
+            border-radius: 25px;
+            width: 260px;
+            height: 260px;
+            object-fit: cover;
+            margin: 0px auto 10px auto;
+            @include xs{
+                width: auto;
+                height: auto;
+            }
+        }
+        .woocommerce-loop-product__title{
+            text-align: center;
+            color: $textColor !important;
+            font-size: 18px;
+            font-weight: 600;
+            @include xs{
+                font-size: 16px;
+                line-height: 18px;
+            }
+        }
+        .star-rating{
+            margin: 0px auto 45px auto;
+            @include xs{
+                margin: 0px auto 10px auto;
+                font-size: 10px;
+            }
+        }
+        .price{
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            font-size: 14px;
+            font-weight: 600;
+            color: $mainColor !important;
+            @include xs{
+                position: unset;
+                text-align: center;
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
+    }
+    .product_type_variable{
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        display: flex;
+        align-items: center;
+        border-radius: 100%;
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+        background-color: $textColor;
+        transition: all 0.4s;
+        &:hover{
+            background-color: darken($textColor,9%) !important;
+        }
+        @include xs{
+            position: unset;
+            margin-right: auto;
+            margin-top: 0 !important;
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+        }
+    }
+    .add_to_cart_button , .product_type_simple{
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        display: flex;
+        align-items: center;
+        border-radius: 100%;
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+        background-color: $textColor;
+        transition: all 0.4s;
+        &:hover{
+            background-color: darken($textColor,9%) !important;
+        }
+        @include xs{
+            position: unset;
+            margin-right: auto;
+            margin-top: 0 !important;
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+        }
+    }
+}
+.productSwiper{
+    padding-bottom: 40px !important;
+    .swiper-slide{
+        .fristBannersSwiper{
+            height: 340px;
+            display: block;
+            width: 100%;
+            @include xs{
+                height: 255px;
+            }
+        }
+        li.product{
+            height: 340px;
+            @include xs{
+                height: 255px;
+            }
+            .woocommerce-loop-product__title{
+                margin: 5px 0;
+                font-size: 19px;
+                @include xs{
+                    font-size: 16px;
+                }
+            }
+            .star-rating{
+                font-size: 13px;
+                @include xs{
+                    font-size: 11px;
+                }
+            }
+            a{
+                img{
+                    width: 100%;
+                    height: 200px;
+                    @include xs{
+                        height: 105px;
+                    }
+                }
+            }
+        }
+    }
+    .woocommerce-LoopProduct-link{
+        display: flex;
+        flex-direction: column;
+    }
+}
+.discountHomeBannersBack{
+    .discountHomeBanners{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        a{
+            &:nth-child(1){
+                width: 48%;
+                @include xs{
+                    width: 100%;
+                }
+            }
+            &:nth-child(2){
+                width: 48%;
+                @include xs{
+                    width: 100%;
+                }
+            }
+            img{
+                display: block;
+                @include xs{
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+.brandSectionHomeBack{
+    .brandSectionHome{
+        .swiper{
+            .swiper-wrapper{
+                padding: 35px 0;
+                @include xs{
+                    padding: 10px 0;
+                }
+                .swiper-slide{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    a{
+                        border-radius: 100%;
+                        display: inline-block;
+                        padding: 35px;
+                        width: 150px;
+                        height: 150px;
+                        transition: all 0.4s;
+                        &:hover{
+                            background-color: $mainColorLight;
+                        }
+                        @include xs{
+                            padding: 20px;
+                            width: 100px;
+                            height: 100px;
+                        }
+                        img{
+                            display: block;
+                        }
+                    }
+                }
+            }
         }
     }
 }
